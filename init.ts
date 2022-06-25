@@ -1,11 +1,10 @@
 import { join } from "https://deno.land/std@0.128.0/path/mod.ts";
 
-const freshProjectPath = 'C:/Users/nhron/Documents/GitHub/Fresh'
-const newProjectName = Deno.args[0]
+const freshProjectPath = 'C:/Users/nhron/Documents/GitHub/Fresh';
+const newProjectName = Deno.args[0];
 const newProjectFolder = join(freshProjectPath, newProjectName);
 
-const p = Deno.run({
-    cwd: freshProjectPath,
+const p = Deno.run({ cwd: freshProjectPath,
     cmd: [
         "deno",
         "run",
@@ -65,3 +64,5 @@ const c = Deno.run({
 await c.status();
 
 // deno task start <name>
+// https://github.com/nhrones/init/blob/master/init.ts
+// deno install -A -n init https://github.com/nhrones/init/blob/master/init.ts
