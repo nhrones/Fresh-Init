@@ -1,10 +1,16 @@
 import { join } from "https://deno.land/std@0.145.0/path/mod.ts";
 
+// a folder that contains all `fresh` projects
 const freshProjectPath = 'C:/Users/nhron/Documents/GitHub/Fresh';
+
+// the name of this new project from the cammand line
 const newProjectName = Deno.args[0];
+
+// the folder that will contain this new project
 const newProjectFolder = join(freshProjectPath, newProjectName);
 
-const p = Deno.run({ cwd: freshProjectPath,
+// a deno process that calls `https://fresh.deno.dev` to init new project
+const builder = Deno.run({ cwd: freshProjectPath,
     cmd: [
         "deno",
         "run",
@@ -16,7 +22,7 @@ const p = Deno.run({ cwd: freshProjectPath,
 });
 
 // wait for the process to complete
-await p.status();
+await builder.status();
 
 // move to the newly created folder
 Deno.chdir(newProjectFolder)
@@ -53,7 +59,7 @@ await Deno.writeTextFile(
 );
 
 // open this new project in vscode
-const c = Deno.run({
+const startVsCode = Deno.run({
     cmd: [
         "C:/Users/nhron/AppData/Local/Programs/Microsoft VS Code/code.exe",
         ".",
@@ -61,8 +67,11 @@ const c = Deno.run({
 });
 
 // wait for the process to complete
-await c.status();
+await startVsCode.status();
 
+// install this `init` utility locally
 // deno install -A -n init https://raw.githubusercontent.com/nhrones/init/master/init.ts
+
+// Usage:
 // from any terminal type ...
 // > init newProjectName
