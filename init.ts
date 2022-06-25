@@ -1,4 +1,4 @@
-import { join } from "https://deno.land/std@0.128.0/path/mod.ts";
+import { join } from "https://deno.land/std@0.145.0/path/mod.ts";
 
 const freshProjectPath = 'C:/Users/nhron/Documents/GitHub/Fresh';
 const newProjectName = Deno.args[0];
@@ -63,6 +63,6 @@ const c = Deno.run({
 // wait for the process to complete
 await c.status();
 
-// deno task start <name>
-// https://github.com/nhrones/init/blob/master/init.ts
-// deno install -A -n init https://github.com/nhrones/init/blob/master/init.ts
+// deno install -A -n init https://raw.githubusercontent.com/nhrones/init/master/init.ts
+// from any terminal type ...
+// > init newProjectName
