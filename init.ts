@@ -70,7 +70,7 @@ const startVsCode = Deno.run({
 await startVsCode.status();
 
 // install this `init` utility locally
-// deno install -A -n init https://raw.githubusercontent.com/nhrones/init/master/init.ts
+// deno install -A -f -n init https://raw.githubusercontent.com/nhrones/init/master/init.ts
 
 // Usage:
 // from any terminal type ...
