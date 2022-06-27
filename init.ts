@@ -18,7 +18,7 @@ const initProcess = Deno.run({ cwd: freshProjectPath,
         "--allow-all",
         "https://fresh.deno.dev", 
         newProjectName,
-        "--twind=false", // I don't use twind
+        //"--twind=false", // I don't use twind
     ]
 });
 
