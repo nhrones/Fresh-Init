@@ -83,5 +83,5 @@ await startVsCode.status();
 
 // Usage:
 // from any terminal type ...
-// > init newProjectName
+// > init newProjectName [y]  y to use twind
 // VsCode will start in the new project folder
