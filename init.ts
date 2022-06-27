@@ -7,6 +7,9 @@ const freshProjectPath = 'C:/Users/nhron/Documents/GitHub/Fresh';
 // > init newProjectName
 const newProjectName = Deno.args[0];
 
+const useTwind = (Deno.args[1] === null) ? '--twind=true' : '--twind=false';
+console.log('use twind: ', useTwind)
+
 // the folder that will contain this new project
 const newProjectFolder = join(freshProjectPath, newProjectName);
 
@@ -18,7 +21,7 @@ const initProcess = Deno.run({ cwd: freshProjectPath,
         "--allow-all",
         "https://fresh.deno.dev", 
         newProjectName,
-        //"--twind=false", // I don't use twind
+        useTwind,
     ]
 });
 
