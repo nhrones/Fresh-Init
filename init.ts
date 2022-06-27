@@ -6,8 +6,8 @@ const freshProjectPath = 'C:/Users/nhron/Documents/GitHub/Fresh';
 // the name of this new project from the cammand line
 // > init newProjectName
 const newProjectName = Deno.args[0];
-
-const useTwind = (Deno.args[1] === null) ? '--twind=true' : '--twind=false';
+console.info('Deno.args ',Deno.args)
+const useTwind = (Deno.args[1] === null) ? '--twind=false' : '--twind=true';
 console.log('use twind: ', useTwind)
 
 // the folder that will contain this new project
